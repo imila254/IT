@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="utf-8" />
+    <title>IT-3</title>
+    <link rel="stylesheet" href="stilius.css" type="text/css">
+    <script src="IT-4lab.js"></script>
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>MUZIKINIŲ ALBUMŲ PARDUOTUVĖ</h1>
+        </hgroup>
+    </header>
+    <nav>
+        <a href="home.html">Pradžia</a> 
+        <a href="about.html">Apie</a> 
+        <a href="albums.html">Albumai</a>
+        <a href="signin.html">Prisijungti</a>  
+    </nav>
+    <section>
+        <br><b> Choose your favroite season: </b><br>
+        <input type="radio" id="summer" value="Summer">Summer<br> 
+        <input type="radio" id="winter" value="Winter">Winter<br> 
+        <input type="radio" id="rainy" value="Rainy">Rainy<br>
+        <input type="radio" id="autumn" value="Autumn">Autumn<br><br>     
+        
+        <button type="button" onclick=" checkButton()"> Submit </button> 
+        <h3 id="disp" style= "color:green"> </h3>
+        <h4 id="error" style= "color:red"> </h4>
+    </section>
+    <footer>
+        <p>Autorius: Vardenis Pavardenis<br>
+        <a href="mailto:name.surname@example.com">name.surname@example.com</a></p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/*7.*/
+@media screen and (max-width: 992px) {
+    body {
+        background-color:darkseagreen;
+    }
+    h1{
+        display: none;
+    }
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+/*4.1*/
+section article h2 {
+    color:grey;
+}
+
+h3{
+    border: 1px groove rgb(37, 33, 33);
+}
+
+/*5.*/
+h3 em{
+    border: inherit;
+}
+
+/*4.2*/
+section > h2 {
+    color: brown;
+}
+
+/*4.3*/
+img[alt]{
+    color: chocolate;
+}
+
+/*4.4*/
+.text{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}
+
+
+/*4.5*/
+h1#title{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: x-large;
+    color: green;
+}
+
+/*6.*/
+p#footer{
+    color:lightskyblue;
+}
+
+#footer{
+    color:red 
+    !important;
+    
+}
+
+p[id=footer]{
+    color:magenta;
+}
+
+
+/**/
+.pavadinimas {
+    display: none;
+  }
+
+
+/**/
+
+h1[id="pirmas"] > em > b {color:aliceblue}
+h1[class="pirmas"] b {color:green !important}
