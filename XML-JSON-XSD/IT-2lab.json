@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "AlbumoTipas": {
+      "type": "object",
+      "properties": {
+        "UPS": {"type": "string", "pattern": "[0-9]{13}"},
+        "pavadinimas": {"type": "string"},
+        "stilius": {"type": "string"},
+        "autoriausIdRef": {"type": "string", "pattern": "[a-z][0-9]"},
+        "išleidimoData": {"type": "string"},
+        "kaina": {
+          "type": "integer", 
+          "minimum": 1, 
+          "maximum": 120,
+          "exclusiveMaximum": true},
+        "valiuta": {
+          "type": "string",
+          "enum": ["euras", "doleris","rublis"]
+        }
+      },
+      "required": [
+        "UPS",
+        "pavadinimas",
+        "stilius",
+        "autoriausIdRef",
+        "išleidimoData",
+        "kaina",
+        "valiuta"
+      ]
+    },
+    "TrumpasAlbumoTipas": {
+      "type": "object",
+      "properties": {
+        "UPS": {"type": "string", "pattern": "[0-9]{13}"},
+        "pavadinimas": {"type": "string"},
+        "kaina": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 120,
+          "exclusiveMaximum": true
+        },
+        "valiuta": {
+          "type": "string",
+          "enum": ["euras", "doleris","rublis"]
+        }
+      },
+      "required": ["UPS", "pavadinimas", "kaina", "valiuta"]
+    },
+    "atlikėjas": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string", "pattern": "[a-z][0-9]"},
+        "vardas": {"OneOf": [{"type": "string"}, {"type": "null"}]},
+        "pavardė": {"OneOf": [{"type": "string"},{"type": "null"}]}
+      },
+      "required": ["id","vardas","pavardė"]}
+  },
+  
+  "type": "object",
+  "properties": {
+    "muzikiniųAlbumųParduotuvė": {
+      "type": "object",
+      "properties": {
+        "atlikėjai": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {"$ref": "#/definitions/atlikėjas"},
+              {
+                "properties": {"pseudonimas": {"OneOf": [{"type": "string"},{"type": "null"}]}},
+                "required": ["pseudonimas"]
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "grupės": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string", "pattern": "[a-z][0-9]"},
+              "pavadinimas": {"type": "string"}
+            },
+            "required": ["id","pavadinimas"]
+          },
+          "minItems": 1
+        },
+        "albumai": {
+          "type": "object",
+          "properties": {
+            "albumoTipas-CD": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/definitions/AlbumoTipas"},
+                  {
+                    "properties": {
+                      "UPS": {"type": "string","pattern": "[0-9]{13}"},
+                      "Prieinamumas": {"type": "boolean"}
+                    },
+                    "required": ["UPS", "Prieinamumas"]
+                  }
+                ]
+              }
+            },
+            "albumoTipas-Vinilas": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {"$ref": "#/definitions/AlbumoTipas"},
+                  {"$ref": "#/definitions/TrumpasAlbumoTipas"}
+                ]
+              }
+            },
+            "albumoTipas-Kasetė": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/AlbumoTipas"}
+            }
+          },
+          "required": ["albumoTipas-CD", "albumoTipas-Vinilas","albumoTipas-Kasetė"]
+        }
+      },
+      "required": ["atlikėjai", "grupės", "albumai"]
+    }
+  },
+  "required": ["muzikiniųAlbumųParduotuvė"]
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.imuzika.lt"
+xmlns:mano ="https://www.imuzika.lt"
+elementFormDefault="qualified" 
+>
+<xs:element name="MuzikiniųAlbumųParduotuvė" type="mano:TipasMuzikiniųAlbumųParduotuvė">
+        <xs:key name="AtlikėjoIdRaktas">
+            <xs:selector xpath="Atlikėjai/Atlikėjas|Grupės/Grupė"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:keyref name="NuorodaĮAtlikėjoID" refer="mano:AtlikėjoIdRaktas">
+            <xs:selector xpath="Albumai/AlbumoTipas/Albumas/Autorius"/>
+            <xs:field xpath="@idref"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="TipasMuzikiniųAlbumųParduotuvė">
+        <xs:sequence>
+            <xs:element name="Atlikėjai" type="mano:TipasAtlikėjai" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Grupės" type="mano:TipasGrupės" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Albumai" type="mano:TipasAlbumai" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TipasAtlikėjai">
+        <xs:sequence>
+            <xs:element name="Atlikėjas" type="mano:TipasAtlikėjasSuAtributu" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TipasAtlikėjas">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="Vardas" type="xs:string"/>
+                <xs:element name="Pavardė" type="xs:string"/>
+            </xs:sequence>
+            <xs:element name="Pseudonimas" type="xs:string"/>
+        </xs:choice>
+
+    </xs:complexType>
+
+    <xs:complexType name="TipasAtlikėjasSuAtributu">
+        <xs:complexContent>
+            <xs:extension base="mano:TipasAtlikėjas">
+                <xs:attribute name="id" type="mano:TipasId" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="TipasId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="TipasGrupės">
+        <xs:sequence>
+            <xs:element name="Grupė" type="mano:TipasGrupė" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TipasGrupė" mixed="true">
+        <xs:sequence>
+            <xs:element name="Pavadinimas" type="xs:string" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="mano:TipasId" use="required"/>
+    </xs:complexType>
+    
+  
+    <xs:complexType name="TipasAlbumai">
+        <xs:sequence>
+            <xs:element name="AlbumoTipas" type="mano:TipasAlbumoTipas" minOccurs="3" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="TipasAlbumoTipas">
+        <xs:sequence>
+            <xs:element name="Albumas" type="mano:TipasAlbumasSuApribojimu" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="tipas" type="mano:Tipas" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="Tipas">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CD" />
+            <xs:enumeration value="Vinilas"/>
+            <xs:enumeration value="Kasetė"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="TipasAlbumas">
+        <xs:sequence>
+            <xs:element name="Pavadinimas" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="Stilius" type="xs:string"/>
+            <xs:element name="Autorius" type="mano:TipasAutorius"/>
+            <xs:element name="IšleidimoData" type="mano:TipasData"/>
+            <xs:element name="Kaina"  type="mano:ApribotaKainaSuAtributu"/>
+        </xs:sequence>
+        <xs:attribute name="UPS" type="mano:TipasUPS" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="TipasAlbumasSuApribojimu">
+        <xs:complexContent>
+            <xs:restriction base="mano:TipasAlbumas">
+                <xs:sequence>
+                    <xs:element name="Pavadinimas" type="xs:string" maxOccurs="1"/>
+                    <xs:element name="Stilius" type="xs:string"/>
+                    <xs:element name="Autorius" type="mano:TipasAutorius"/>
+                    <xs:element name="IšleidimoData" type="mano:TipasData"/>
+                    <xs:element name="Kaina"  type="mano:ApribotaKainaSuAtributu"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="DatosListas">
+        <xs:list itemType="xs:integer"/>
+    </xs:simpleType>
+
+    <xs:simpleType name='TipasData'>
+        <xs:restriction base='mano:DatosListas'>
+            <xs:pattern value="([12]\d{3} (0[1-9]|1[0-2]) (0[1-9]|[12]\d|3[01]))"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TipasUPS">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{13}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="TipasAutorius">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+               <xs:attribute name="idref" type="mano:TipasId" use="required"/> 
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="TipasKaina">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="1.00"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 
+    <xs:simpleType name="TipasKainaSuApribojimu">
+        <xs:restriction base="TipasKaina">
+            <xs:minExclusive value="0.00"/>
+        </xs:restriction>
+    </xs:simpleType>
+    -->
+   
+    <xs:complexType name="TipasKainaSuAtributu">
+        <xs:simpleContent>
+            <xs:extension base="mano:TipasKaina">
+                <xs:attribute name="valiuta" type="mano:TipasValiuta" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="ApribotaKainaSuAtributu">
+        <xs:simpleContent>
+            <xs:restriction base="mano:TipasKainaSuAtributu">
+                <xs:fractionDigits value="2"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+<xs:simpleType name="TipasValiuta">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="euras" />
+        <xs:enumeration value="doleris"/>
+        <xs:enumeration value="rublis"/>
+    </xs:restriction>
+</xs:simpleType>
+
+
+<!--
+
+namespace?
+Patikrint ar TipasAutorius teisingai aprasytas
+Pasikartoti turinio tipus
+ -->
+
+ 
+</xs:schema>

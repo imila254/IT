@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MuzikiniųAlbumųParduotuvė 
+xmlns="https://www.imuzika.lt"
+xsi:schemaLocation="https://www.imuzika.lt IT-1lab_namespace.xsd"
+xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance">
+    <Atlikėjai>
+        <Atlikėjas id="a1">
+            <Vardas>Taylor</Vardas>
+            <Pavardė>Swift</Pavardė> 
+        </Atlikėjas>
+        <Atlikėjas id="a2">
+            <Pseudonimas>Halsey</Pseudonimas>   
+        </Atlikėjas>
+        
+    </Atlikėjai>
+    <Grupės>
+        <Grupė id="a3">
+            <Pavadinimas>Onerepublic</Pavadinimas>
+            Pastaba
+        </Grupė>    
+        <Grupė id="a4">
+            <Pavadinimas>Imagine Dragons</Pavadinimas>
+        </Grupė>  
+    </Grupės>
+    <Albumai>
+        <AlbumoTipas tipas="CD">
+            <Albumas UPS="4772222000001">
+                <Pavadinimas>Evermore</Pavadinimas>
+                <Stilius>Pop Rock</Stilius>
+                <Autorius idref="a1"/>
+                <IšleidimoData>2021 02 12</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+            <Albumas UPS="4772222000003">
+                <Pavadinimas>Manic</Pavadinimas>
+                <Stilius>Pop</Stilius>
+                <Autorius idref="a2"/>
+                <IšleidimoData>2020 01 17</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+            <Albumas UPS="4772222000005">
+                <Pavadinimas>If I can't have love, I want power</Pavadinimas>
+                <Stilius>Alternative rock</Stilius>
+                <Autorius idref="a2"/>
+                <IšleidimoData>2021 08 27</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+            <Albumas UPS="4772222000006">
+                <Pavadinimas>Human</Pavadinimas>
+                <Stilius>Pop rock</Stilius>
+                <Autorius idref="a3"/>
+                <IšleidimoData>2021 08 27</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+            <Albumas UPS="4772222000007">
+                <Pavadinimas>Mercury-act</Pavadinimas>
+                <Stilius>Pop rock</Stilius>
+                <Autorius idref="a4"/>
+                <IšleidimoData>2021 09 03</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+        </AlbumoTipas>
+        <AlbumoTipas tipas="Vinilas">
+            <Albumas UPS="4772222000004">
+                <Pavadinimas>If I can't have love, I want power</Pavadinimas>
+                <Stilius>Alternative rock</Stilius>
+                <Autorius idref="a2"/>
+                <IšleidimoData>2021 08 27</IšleidimoData>
+                <Kaina valiuta="euras">33.00</Kaina>
+            </Albumas>
+            <Albumas UPS="4772222000008">   
+                <Pavadinimas>Mercury-act</Pavadinimas>
+                <Stilius>Pop rock</Stilius>
+                <Autorius idref="a4"/>
+                <IšleidimoData>2021 09 03</IšleidimoData>
+                <Kaina valiuta="euras">30.00</Kaina>
+            </Albumas>
+        </AlbumoTipas>
+        <AlbumoTipas tipas="Kasetė">
+            <Albumas UPS="4772222000002">
+                <Pavadinimas>Evermore</Pavadinimas>
+                <Stilius>Pop Rock</Stilius>
+                <Autorius idref="a1"/>
+                <IšleidimoData>2021 02 12</IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </Albumas>
+        </AlbumoTipas>
+    </Albumai>
+</MuzikiniųAlbumųParduotuvė>

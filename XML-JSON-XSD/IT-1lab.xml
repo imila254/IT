@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MuzikiniųAlbumųParduotuvė xmlns="https://www.imuzika.lt">
+    <Atlikėjai>
+        <ts:Atlikėjas xmlns:ts="https://www.taylorswift.com" id="a1">
+            <ts:Vardas>Taylor</ts:Vardas>
+            <ts:Pavardė>Swift</ts:Pavardė> 
+            <Pseudonimas/>
+        </ts:Atlikėjas>
+        <hls:Atlikėjas xmlns:hls="https://www.loveandpower.com" id="a2">
+            <Vardas/>
+            <Pavardė/> 
+            <hls:Pseudonimas>Halsey</hls:Pseudonimas>   
+        </hls:Atlikėjas>
+    </Atlikėjai>
+    <Grupės>
+        <or:Grupė xmlns:or="https://onerepublic.com" id="a3">
+            <or:Pavadinimas>Onerepublic</or:Pavadinimas>
+        </or:Grupė>    
+        <imgd:Grupė xmlns:imgd="https://www.imaginedragonsmusic.com" id="a4">
+            <imgd:Pavadinimas>Imagine Dragons</imgd:Pavadinimas>
+        </imgd:Grupė>  
+    </Grupės>
+    <Albumai>
+        <AlbumoTipas tipas="CD">
+            <tsa:Albumas xmlns:tsa="https://www.taylorswift.com" UPS="4772222000001">
+                <tsa:Pavadinimas>Evermore</tsa:Pavadinimas>
+                <tsa:Stilius>Pop Rock</tsa:Stilius>
+                <tsa:Autorius idref="a1"/>
+                <tsa:IšleidimoData>2021-02-12</tsa:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </tsa:Albumas>
+            <hlsa:Albumas xmlns:hlsa="https://www.loveandpower.com" UPS="4772222000003">
+                <hlsa:Pavadinimas>Manic</hlsa:Pavadinimas>
+                <hlsa:Stilius>Pop</hlsa:Stilius>
+                <hlsa:Autorius idref="a2"/>
+                <hlsa:IšleidimoData>2020-01-17</hlsa:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </hlsa:Albumas>
+            <hlsa:Albumas xmlns:hlsa="https://www.loveandpower.com" UPS="4772222000005">
+                <hlsa:Pavadinimas>If I can't have love, I want power</hlsa:Pavadinimas>
+                <hlsa:Stilius>Alternative rock</hlsa:Stilius>
+                <hlsa:Autorius idref="a2"/>
+                <hlsa:IšleidimoData>2021-08-27</hlsa:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </hlsa:Albumas>
+            <ora:Albumas xmlns:ora="https://onerepublic.com" UPS="4772222000006">
+                <ora:Pavadinimas>Human</ora:Pavadinimas>
+                <ora:Stilius>Pop rock</ora:Stilius>
+                <ora:Autorius idref="a3"/>
+                <ora:IšleidimoData>2021-08-27</ora:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </ora:Albumas>
+            <imgda:Albumas xmlns:imgda="https://www.imaginedragonsmusic.com" UPS="4772222000007">
+                <imgda:Pavadinimas>Mercury-act</imgda:Pavadinimas>
+                <imgda:Stilius>Pop rock</imgda:Stilius>
+                <imgda:Autorius idref="a4"/>
+                <imgda:IšleidimoData>2021-09-03</imgda:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </imgda:Albumas>
+        </AlbumoTipas>
+        <AlbumoTipas tipas="Vinilas">
+            <hlsa:Albumas xmlns:hlsa="https://www.loveandpower.com" UPS="4772222000004">
+                <hlsa:Pavadinimas>If I can't have love, I want power</hlsa:Pavadinimas>
+                <hlsa:Stilius>Alternative rock</hlsa:Stilius>
+                <hlsa:Autorius idref="a2"/>
+                <hlsa:IšleidimoData>2021-08-27</hlsa:IšleidimoData>
+                <Kaina valiuta="euras">33.00</Kaina>
+            </hlsa:Albumas>
+            <imgda:Albumas xmlns:imgda="https://www.imaginedragonsmusic.com" UPS="4772222000008">   
+                <imgda:Pavadinimas>Mercury-act</imgda:Pavadinimas>
+                <imgda:Stilius>Pop rock</imgda:Stilius>
+                <imgda:Autorius idref="a4"/>
+                <imgda:IšleidimoData>2021-09-03</imgda:IšleidimoData>
+                <Kaina valiuta="euras">30.00</Kaina>
+            </imgda:Albumas>
+        </AlbumoTipas>
+        <AlbumoTipas tipas="Kasetė">
+            <tsa:Albumas xmlns:tsa="https://www.taylorswift.com" UPS="4772222000002">
+                <tsa:Pavadinimas>Evermore</tsa:Pavadinimas>
+                <tsa:Stilius>Pop Rock</tsa:Stilius>
+                <tsa:Autorius idref="a1"/>
+                <tsa:IšleidimoData>2021-02-12</tsa:IšleidimoData>
+                <Kaina valiuta="euras">17.00</Kaina>
+            </tsa:Albumas>
+        </AlbumoTipas>
+    </Albumai>
+</MuzikiniųAlbumųParduotuvė>

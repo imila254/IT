@@ -1,0 +1,118 @@
+{
+  "muzikiniųAlbumųParduotuvė": {
+    "atlikėjai": [
+      {
+        "id": "a1",
+        "vardas": "Taylor",
+        "pavardė": "Swift",
+        "pseudonimas": null
+      },
+      {
+        "id": "a2",
+        "vardas": null,
+        "pavardė": null,
+        "pseudonimas": "Halsey"
+      }
+    ],
+    "grupės": [
+      {
+        "id": "a3",
+        "pavadinimas": "Onerepublic"
+      },
+      {
+        "id": "a4",
+        "pavadinimas": "Imagine Dragons"
+      }
+    ],
+    "albumai": {
+      "albumoTipas-CD": [
+        {
+          "UPS": "4772222000001",
+          "pavadinimas": "Evermore",
+          "stilius": "Pop Rock",
+          "autoriausIdRef": "a1",
+          "išleidimoData": "2021-02-12",
+          "kaina": 17,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000003",
+          "pavadinimas": "Manic",
+          "stilius": "Pop",
+          "autoriausIdRef": "a2",
+          "išleidimoData": "2020-01-17",
+          "kaina": 17,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000005",
+          "pavadinimas": "If I can't have love, I want power",
+          "stilius": "Alternative rock",
+          "autoriausIdRef": "a2",
+          "išleidimoData": "2021-08-27",
+          "kaina": 17,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000006",
+          "pavadinimas": "Human",
+          "stilius": "Pop rock",
+          "autoriausIdRef": "a3",
+          "išleidimoData": "2021-08-27",
+          "kaina": 17,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000007",
+          "pavadinimas": "Mercury-act",
+          "stilius": "Pop rock",
+          "autoriausIdRef": "a4",
+          "išleidimoData": "2021-09-03",
+          "kaina": 17,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000007",
+          "Prieinamumas":false
+        }
+      ],
+      "albumoTipas-Vinilas": [
+        {
+          "UPS": "4772222000004",
+          "pavadinimas": "If I can't have love, I want power",
+          "stilius": "Alternative rock",
+          "autoriausIdRef": "a2",
+          "išleidimoData": "2021-08-27",
+          "kaina": 33,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000008",
+          "pavadinimas": "Mercury-act",
+          "stilius": "Pop rock",
+          "autoriausIdRef": "a4",
+          "išleidimoData": "2021-09-03",
+          "kaina": 30,
+          "valiuta": "euras"
+        },
+        {
+          "UPS": "4772222000008",
+          "pavadinimas": "Mercury-act",
+          "kaina": 30,
+          "valiuta": "euras"
+        }
+      ],
+      "albumoTipas-Kasetė": [
+        {
+          "UPS": "4772222000002",
+          "pavadinimas": "Evermore",
+          "stilius": "Pop Rock",
+          "autoriausIdRef": "a1",
+          "išleidimoData": "2021-02-12",
+          "kaina": 17,
+          "valiuta": "euras"
+        }
+      ]
+    }
+  }
+}
